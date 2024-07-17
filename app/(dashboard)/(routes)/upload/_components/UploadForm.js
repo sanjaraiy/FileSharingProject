@@ -54,7 +54,7 @@ function UploadForm() {
         </label>
       </div>
       {errorMsg ? <AlertMsg msg={errorMsg}></AlertMsg> : null }
-        <FilePreview></FilePreview>
+      { file ? <FilePreview file={file} removeFile={() => setFile(null)}></FilePreview> : null }
         <button disabled={!file} className="p-2 bg-primary text-white w-[30%] rounded-full mt-5 disabled:bg-gray-400">Upload</button>
     </div>
   );
